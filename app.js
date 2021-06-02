@@ -3,30 +3,16 @@ const app = express();
 
 const mysqlConecction = require('./database.js');
 
-
-/*var mysql = require('mysql');
-var connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'todogar',
-    port: 3306
-});
-connection.connect(function(error){
+var query = mysqlConecction.query('select *from pregunta', function(error, resultado){
     if(error){
         throw error;
     }else{
-        console.log('Conectado');
+        console.log(resultado);
     }
 });
 
-var query = connection.query('select *from pregunta', function(error, resultado){
-    if(error){
-        throw error;
-    }else{
-        //console.log(resultado);
-    }
-});*/
+
+
 
 const bcryptjs = require('bcryptjs');
 

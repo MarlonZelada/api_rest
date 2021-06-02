@@ -1,14 +1,14 @@
 const mysql = require('mysql');
 
-const mysqlConecction = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'todogar',
+const mysqlConection = mysql.createConnection({
+    host: process.env.HOST,
+    user: process.env.USER,
+    password: process.env.PASSWORD,
+    database: process.env.DATABASE,
     multipleStatements: true
 });
 
-mysqlConecction.connect(function(err){
+mysqlConection.connect(function(err){
     if(err){
         console.error(err);
         return;
@@ -17,4 +17,4 @@ mysqlConecction.connect(function(err){
     }
 });
 
-module.exports = mysqlConecction;
+module.exports = mysqlConection;

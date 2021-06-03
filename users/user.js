@@ -72,12 +72,12 @@ router.post('/user/newUser', async(req, res) => {
                             console.log('token Guardado');
                         })
                         
-                        verificationLink = `http://localhost:3000/new_password/${token}`;
+                        verificationLink = `http://localhost:3000/activate_account/${token}`;
 
 
                         console.log(token);
                     
-                        /*let info =  transporter.sendMail({
+                        let info =  transporter.sendMail({
                             from: '"Fred Foo 👻" <marlon.zelada@gmail.com>', // sender address
                             to: usuario, // list of receivers
                             subject: "Confirmar Correo ✔", // Subject line
@@ -86,7 +86,7 @@ router.post('/user/newUser', async(req, res) => {
                                     ${name}
                                     <b>, click en el siguiente enlace para activar tu cuenta </b> </>
                                    ${verificationLink}`, // html body
-                        });*/
+                        });
                     });
                     //console.log("Message sent: %s", info.messageId);
                     res.json('Saved')

@@ -74,7 +74,6 @@ router.post('/user/newUser', async(req, res) => {
                         
                         verificationLink = `http://localhost:3000/activate_account/${token}`;
 
-
                         console.log(token);
                     
                         let info =  transporter.sendMail({
@@ -98,6 +97,7 @@ router.post('/user/newUser', async(req, res) => {
     });
  });
 
+ //Activate Account
 router.put('/activate_account', (req, res)=>{
     const token = req.headers.reset;
 
